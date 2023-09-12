@@ -1,6 +1,9 @@
 import { Button } from "./components/ui/button"
 import { Separator } from "./components/ui/separator"
+import { Textarea } from "./components/ui/textarea"
+
 import { Github } from "lucide-react"
+
 export function App() {
 
     return (
@@ -18,13 +21,23 @@ export function App() {
         </div>
         <main className="flex-1 p-6 flex gap-6">
           <div className="flex flex-col flex-1 gap-4">
-            <div className="grid grid-rows-2 gap-4 flex-1"></div>
+            <div className="grid grid-rows-2 gap-4 flex-1">
+              <Textarea 
+                className="resize-none p-4 leading-relaxed"
+                placeholder="Inclua o prompt para a IA..."
+              />
+              <Textarea 
+                className="resize-none p-4 leading-relaxed"
+                placeholder="Resultado gerado pela IA..." readOnly
+              />
+            </div>
             <p className="text-sm text-muted-foreground"> 
               Lembre-se: Você pode utilizar a variável <code className="text-blue-400">
                 {"{transcription}"}
               </code> no seu prompt para adicionar o conteúdo de transcrição do vídeo selecionado.
             </p>
           </div>
+          
           <aside className="w-80"></aside>
         </main>
       </div>
