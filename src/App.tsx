@@ -91,7 +91,15 @@ export function App() {
                   Você poderá customizar essa opção em breve
                 </span>
               </div>
+              <div className="space-y-2">
+                <Label>Temperatura</Label>
+                
+                <span className="block text-xs text-muted-foreground italic">
+                  Valores mais baixos tendem a deixar os resultados mais criativos e com possíveis erros
+                </span>
+              </div>
             </form>
+            
           </aside>
         </main>
       </div>
