@@ -83,10 +83,10 @@ export function App() {
                     <SelectValue placeholder='Selecione um prompt...'/>
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value='gpt3.5'>
+                    <SelectItem value='titulo'>
                       Título do Youtube
                     </SelectItem>
-                    <SelectItem value='gpt3.5'>
+                    <SelectItem value='descricao'>
                       Descrição do Youtube
                     </SelectItem>
                   </SelectContent>
