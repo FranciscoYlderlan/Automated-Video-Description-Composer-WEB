@@ -3,8 +3,9 @@ import { Separator } from "./components/ui/separator"
 import { Textarea } from "./components/ui/textarea"
 import { Label } from "./components/ui/label"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "./components/ui/select"
+import { Slider } from "./components/ui/slider"
 
-import { Github, FileVideo, Upload } from "lucide-react"
+import { Github, FileVideo, Upload, Wand2 } from "lucide-react"
 
 export function App() {
 
@@ -57,7 +58,7 @@ export function App() {
                 accept="video/mp4" 
                 className="sr-only"
               />
-              <Separator className="w-full" />
+              <Separator/>
 
               <div className="space-y-2">
                 <Label htmlFor="transcription_prompt">Prompt de transcrição</Label>
@@ -75,6 +76,25 @@ export function App() {
             </form>
             <Separator />
             <form className="space-y-6">
+            <div className="space-y-2">
+                <Label>Modelo</Label>
+                <Select >
+                  <SelectTrigger>
+                    <SelectValue placeholder='Selecione um prompt...'/>
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value='gpt3.5'>
+                      Título do Youtube
+                    </SelectItem>
+                    <SelectItem value='gpt3.5'>
+                      Descrição do Youtube
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+                <span className="block text-xs text-muted-foreground italic">
+                  Você poderá customizar essa opção em breve
+                </span>
+              </div>
               <div className="space-y-2">
                 <Label>Modelo</Label>
                 <Select disabled defaultValue='gpt3.5'>
@@ -91,13 +111,15 @@ export function App() {
                   Você poderá customizar essa opção em breve
                 </span>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <Label>Temperatura</Label>
-                
-                <span className="block text-xs text-muted-foreground italic">
+                <Slider min={0} max={1} step={0.1}/>                
+                <span className="block text-xs text-muted-foreground italic leading-relaxed">
                   Valores mais baixos tendem a deixar os resultados mais criativos e com possíveis erros
                 </span>
               </div>
+              <Separator />
+              <Button type="submit" className="w-full"> Executar <Wand2 className="w-4 h-4 ml-2"/></Button>
             </form>
             
           </aside>
